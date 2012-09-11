@@ -35,6 +35,7 @@ class ApplicationSpec extends Specification {
 
         val result = getResult( ApplicationTest.index(FakeRequest()) )
         status(result) must equalTo(OK)
+        contentAsString(result) must equalTo("""{"title":"Representational state transfer"}""")
       }
     }
   }
