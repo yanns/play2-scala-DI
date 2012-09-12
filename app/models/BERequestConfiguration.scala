@@ -3,7 +3,7 @@ package models
 /**
  * request configuration for Wikipedia
  */
-trait RequestConfiguration {
+trait BERequestConfiguration {
 
   def url: String
   def userAgent: String

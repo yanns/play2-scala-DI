@@ -3,7 +3,7 @@ package models
 import play.api.libs.concurrent.Promise
 import play.api.libs.json.JsValue
 
-trait Request {
+trait BERequest {
 
   /**
    * @param title title of the page

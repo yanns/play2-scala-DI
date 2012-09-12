@@ -3,20 +3,20 @@ package models.cake
 import play.api.libs.json.JsValue
 import play.api.libs.ws.WS
 import play.api.libs.concurrent.Promise
-import models.Request
+import models.BERequest
 import java.net.URLEncoder
 
 /**
- * real implementation for [[models.Request]]
+ * real implementation for [[models.BERequest]]
  */
-trait WikipediaRequestComponent extends RequestComponent {
+trait WikipediaRequestComponent extends BERequestComponent {
 
-  // dependency: WikipediaRequestComponent needs RequestConfiguration
-  this: RequestConfigurationComponent =>
+  // dependency: WikipediaRequestComponent needs BERequestConfiguration
+  this: BERequestConfigurationComponent =>
 
   def request = new WikipediaRequest
 
-  class WikipediaRequest extends Request {
+  class WikipediaRequest extends BERequest {
 
     def get(title: String): Promise[JsValue] = {
       val url = requestConfiguration.url.format( URLEncoder.encode(title, "UTF-8") )

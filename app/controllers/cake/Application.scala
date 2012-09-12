@@ -10,7 +10,7 @@ object Application extends ApplicationImpl
 
 // implementation of Application is in a trait so that we can
 // inject other dependencies for testing
-trait ApplicationImpl extends Controller with RequestComponent {
+trait ApplicationImpl extends Controller with BERequestComponent {
 
   def index = Action {
     Async {
