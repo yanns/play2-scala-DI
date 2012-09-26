@@ -2,9 +2,10 @@ package models.cake
 
 import play.api.libs.json.JsValue
 import play.api.libs.ws.WS
-import play.api.libs.concurrent.Promise
 import models.BERequest
 import java.net.URLEncoder
+import concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
 
 /**
  * real implementation for [[models.BERequest]]
@@ -18,7 +19,7 @@ trait WikipediaRequestComponent extends BERequestComponent {
 
   class WikipediaRequest extends BERequest {
 
-    def get(title: String): Promise[JsValue] = {
+    def get(title: String): Future[JsValue] = {
       val url = requestConfiguration.url.format( URLEncoder.encode(title, "UTF-8") )
       WS.url(url)
         .withHeaders("User-Agent" -> requestConfiguration.userAgent)

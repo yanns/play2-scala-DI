@@ -7,7 +7,6 @@ import play.api.test._
 import models.cake.BERequestComponent
 
 import models.MockRequest
-import controllers.ResultExtractor._
 
 trait MockRequestComponent extends BERequestComponent {
 
@@ -25,7 +24,7 @@ class ApplicationSpec extends Specification {
     "inject custom json" in {
       running(FakeApplication()) {
 
-        val result = getResult( ApplicationTest.index(FakeRequest()) )
+        val result = ApplicationTest.index(FakeRequest())
         status(result) must equalTo(OK)
         contentAsString(result) must equalTo("""{"title":"Representational state transfer"}""")
       }

@@ -5,7 +5,6 @@ import play.api.test.Helpers._
 import play.api.test._
 
 import models.{BERequest, MockRequest}
-import controllers.ResultExtractor._
 
 
 class ApplicationSpec extends Specification {
@@ -18,7 +17,7 @@ class ApplicationSpec extends Specification {
     "inject custom json" in {
       running(FakeApplication()) {
 
-        val result = getResult(ApplicationTest.index(FakeRequest()))
+        val result = ApplicationTest.index(FakeRequest())
         status(result) must equalTo(OK)
         contentAsString(result) must equalTo( """{"title":"Representational state transfer"}""")
       }

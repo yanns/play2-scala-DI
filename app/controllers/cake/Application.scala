@@ -2,6 +2,7 @@ package controllers.cake
 
 import play.api.mvc._
 import models.cake._
+import scala.concurrent.ExecutionContext.Implicits.global
 
 // "inject" the implementation to use the wikipedia API
 object Application extends ApplicationImpl
