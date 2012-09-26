@@ -10,7 +10,7 @@ The target platform is:
 Tested:
 - Cake pattern
 - injection with implicits. Play cannot call controller with this method.
+- spring
 
 Planed:
 - Reader monad
-- maybe some standard DI frameworks, like Spring
