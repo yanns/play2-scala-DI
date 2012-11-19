@@ -1,10 +1,10 @@
 package controllers.spring
 
 import play.api.mvc.{Action, Controller}
+import play.api.libs.concurrent.Execution.Implicits._
 
 import org.springframework.beans.factory.annotation._
 import models.BERequest
-import scala.concurrent.ExecutionContext.Implicits.global
 
 
 @org.springframework.stereotype.Controller

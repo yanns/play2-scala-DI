@@ -2,10 +2,11 @@ package models.cake
 
 import play.api.libs.json.JsValue
 import play.api.libs.ws.WS
+import play.api.libs.concurrent.Execution.Implicits._
+
 import models.BERequest
 import java.net.URLEncoder
 import concurrent.Future
-import scala.concurrent.ExecutionContext.Implicits.global
 
 /**
  * real implementation for [[models.BERequest]]

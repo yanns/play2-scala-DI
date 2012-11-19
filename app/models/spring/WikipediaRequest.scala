@@ -1,11 +1,13 @@
 package models.spring
 
-import play.api.libs.json.JsValue
 import java.net.URLEncoder
+
+import play.api.libs.json.JsValue
 import play.api.libs.ws.WS
+import play.api.libs.concurrent.Execution.Implicits._
+
 import models.{BERequest, BERequestConfiguration}
 import concurrent.Future
-import scala.concurrent.ExecutionContext.Implicits.global
 import org.springframework.beans.factory.annotation.Autowired
 
 @org.springframework.stereotype.Service
