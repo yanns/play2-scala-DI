@@ -4,7 +4,7 @@ import java.net.URLEncoder
 
 import play.api.libs.json.JsValue
 import play.api.libs.ws.WS
-import play.api.libs.concurrent.Execution.Implicits._
+import play.api.libs.concurrent.Execution.Implicits.defaultContext
 
 import models.{BERequest, BERequestConfiguration}
 import concurrent.Future

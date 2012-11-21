@@ -1,7 +1,7 @@
 package controllers.spring
 
 import play.api.mvc.{Action, Controller}
-import play.api.libs.concurrent.Execution.Implicits._
+import play.api.libs.concurrent.Execution.Implicits.defaultContext
 
 import org.springframework.beans.factory.annotation._
 import models.BERequest

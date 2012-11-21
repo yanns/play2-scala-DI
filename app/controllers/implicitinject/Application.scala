@@ -1,7 +1,7 @@
 package controllers.implicitinject
 
 import play.api.mvc.{Action, Controller}
-import play.api.libs.concurrent.Execution.Implicits._
+import play.api.libs.concurrent.Execution.Implicits.defaultContext
 
 import models.{BERequestConfiguration, BERequest}
 import models.implicitinject.ProductionEnvironment._
